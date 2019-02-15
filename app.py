@@ -27,8 +27,8 @@ class OpenGraph(dict):
         # If scrape == True, then will try to fetch missing attribtues
         # from the page's body
 
-        # self.scrape = scrape
-        # self._url = url
+        self.scrape = scrape
+        self._url = url
 
         for k in kwargs.keys():
             self[k] = kwargs[k]
