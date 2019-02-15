@@ -1,0 +1,15 @@
+version: '3.2'
+services:
+    siteinfo:
+        image: 'wannamit/siteinfo:latest'
+        deploy:
+            mode: replicated
+            replicas: 1
+            restart_policy: {condition: any, delay: 5s, max_attempts: 3, window: 120s}
+        networks:
+            - frontend-network
+        ports:
+            - "8088:8088"
+
+networks:
+    frontend-network:
